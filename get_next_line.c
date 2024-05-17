@@ -3,14 +3,13 @@
 
 char	*get_next_line(int fd)
 {
-	int		i;
+	int		i = 0;
 	int		bytes;
 	char	*buffer;
 	char	c;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
-	index = 0;
 	bytes = read(fd, &c, 1);
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	while (bytes > 0)
